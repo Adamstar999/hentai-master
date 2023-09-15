@@ -1,0 +1,21 @@
+:root {
+    --first-color: #c580e3;
+    --second-color: #571872;
+    --third-color: #721869;
+    --fourth-color: #16061d;
+    --text-light-theme: #222;
+    --text-dark-theme: #eee;
+    --disabled: #721821;
+    --enabled: #187233;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Alexandria", sans-serif;
+}

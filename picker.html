@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hentai Picker</title>
+
+        <!-- Page's Font: Alexandria -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/picker.css" />
+    </head>
+    <body class="bg-dark-page">
+        <main>
+            <h1 class="title">Hentai Picker</h1>
+            <a href="index.html">Main Page</a>
+            <article class="categories">
+                <template id="category-template">
+                    <section class="category">
+                        <div>
+                            <button class="category-random-btn">Random</button>
+                            <h2 class="category-name"></h2>
+                        </div>
+                        <ul class="category-values"></ul>
+                    </section>
+                </template>
+            </article>
+        </main>
+        <script src="js/picker.js" type="module"></script>
+        <script src="js/test.js" type="module"></script>
+    </body>
+</html>

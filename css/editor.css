@@ -1,0 +1,83 @@
+.artist-form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artist-form label {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: solid medium var(--fourth-color);
+    border-radius: 0.5rem;
+}
+
+.artist-input {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-block: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.artist-submit {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-inline: 3rem;
+    padding-block: 0.5rem;
+    margin-block: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--second-color);
+    color: var(--text-dark-theme);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+
+.artist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding-inline: 1rem;
+}
+
+.artist-url {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.artist-categories {
+    list-style-type: none;
+}
+
+.artist-btn {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--text-dark-theme);
+    background-color: var(--third-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.artist-submit:hover,
+.artist-btn:hover {
+    transform: scale(1.05);
+}

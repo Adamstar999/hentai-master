@@ -19,3 +19,23 @@ body {
     margin: 0;
     font-family: "Alexandria", sans-serif;
 }
+
+.bg-dark-page {
+    background-color: var(--first-color);
+    color: var(--text-light-theme);
+}
+
+.title {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--text-light-theme);
+    transition: all 0.2s ease-out;
+}
+
+.link:hover {
+    color: var(--text-dark-theme);
+}

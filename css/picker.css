@@ -1,18 +1,3 @@
-.bg-dark-page {
-    background-color: var(--first-color);
-    color: var(--text-light-theme);
-}
-
-.title {
-    text-align: center;
-}
-
-.categories {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem; */
-}
-
 .category {
     border: solid medium var(--third-color);
     border-radius: 0.5rem;
@@ -51,17 +36,6 @@
     gap: 1rem;
     padding-bottom: 1rem;
     padding-inline: 2rem;
-}
-
-.category-link {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--text-light-theme);
-    transition: all 0.2s ease-out;
-}
-
-.category-link:hover {
-    color: var(--text-dark-theme);
 }
 
 .category-random-selected {

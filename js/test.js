@@ -1,19 +1,11 @@
-import artists from "./artists.js";
+import data from "../hentaiDB/artists.json" assert { "type": "json" };
 
-const categoryObjects = [];
+let count = 0;
 
-const urlGuide = {
-    rule34: (name) =>
-        `https://rule34.xxx/index.php?page=post&s=list&tags=${name}`,
-    nhentai: (name) => `https://nhentai.net/artist/${name}/`,
-};
-
-artists.doujin.forEach((artist) => {
-    categoryObjects.push({
-        name: artist,
-        url: urlGuide.nhentai(artist),
-        categories: ["videos & images"],
-    });
+const modifiedArtists = data.artists.map((el) => {
+    el.id = count;
+    count++;
+    return el;
 });
 
-// console.log(JSON.stringify(categoryObjects));
+// console.log(JSON.stringify(modifiedArtists));

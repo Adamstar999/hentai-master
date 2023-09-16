@@ -14,13 +14,71 @@
         />
 
         <link rel="stylesheet" href="css/styles.css" />
-        <!-- <link rel="stylesheet" href="css/picker.css" /> -->
+        <link rel="stylesheet" href="css/editor.css" />
     </head>
     <body class="bg-dark-page">
         <main>
             <h1 class="title">Hentai Editor</h1>
             <a href="index.html">Main Page</a>
+
+            <form class="artist-form">
+                <input
+                    class="artist-input"
+                    name="name"
+                    id="name"
+                    type="text"
+                    placeholder="Artist"
+                />
+                <input
+                    class="artist-input"
+                    name="url"
+                    id="url"
+                    type="text"
+                    placeholder="Url"
+                />
+
+                <input
+                    class="artist-input"
+                    name="categories"
+                    id="categories"
+                    type="text"
+                    placeholder="Categories"
+                />
+                <label for="categories"
+                    >*Separate each category with a comma and a space: "images,
+                    videos"</label
+                >
+                <input class="artist-submit" type="submit" value="Insertar" />
+            </form>
+
+            <article class="artists">
+                <template id="artist-template">
+                    <section class="artist">
+                        <a class="artist-url link" target="_blank">
+                            <span class="artist-name"></span>
+                        </a>
+                        <ul class="artist-categories"></ul>
+                        <button id="artist-edit" class="artist-btn">
+                            Edit
+                        </button>
+                        <button id="artist-delete" class="artist-btn">
+                            Delete
+                        </button>
+                    </section>
+                </template>
+                <!-- <section class="artist">
+                    <a href="#" class="artist-url">
+                        <span class="artist-name">Speedoru</span>
+                    </a>
+                    <ul class="artist-categories">
+                        <li>Images</li>
+                        <li>Videos</li>
+                    </ul>
+                </section> -->
+            </article>
         </main>
-        <!-- <script src="js/picker.js" type="module"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js/editor.js" type="module"></script>
+        <script src="js/test.js" type="module"></script>
     </body>
 </html>

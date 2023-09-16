@@ -5,7 +5,9 @@ let currentId;
 // DOM Variables
 const $artistTemplate = d.getElementById("artist-template").content;
 const $artistsFragment = d.createDocumentFragment();
-const $form = d.querySelector(".artist-form");
+const $artistsForm = d.querySelector(".artist-form");
+const $artistSearch = d.querySelector("#artist-search");
+const $categorySearch = d.querySelector("#category-search");
 
 const getArtistsData = async () => {
     try {
@@ -60,7 +62,7 @@ d.addEventListener("DOMContentLoaded", async (e) => {
 });
 
 d.addEventListener("submit", async (e) => {
-    if (e.target === $form) {
+    if (e.target === $artistsForm) {
         e.preventDefault();
         if (!currentId) {
             // POST
@@ -94,9 +96,9 @@ d.addEventListener("submit", async (e) => {
 
 d.addEventListener("click", async (e) => {
     if (e.target.matches("#artist-edit")) {
-        $form.name.value = e.target.dataset.name;
-        $form.url.value = e.target.dataset.url;
-        $form.categories.value = e.target.dataset.categories;
+        $artistsForm.name.value = e.target.dataset.name;
+        $artistsForm.url.value = e.target.dataset.url;
+        $artistsForm.categories.value = e.target.dataset.categories;
         currentId = e.target.dataset.id;
 
         window.scrollTo(0, 0);
@@ -113,5 +115,54 @@ d.addEventListener("click", async (e) => {
                 console.log("The artist couldn't be deleted. ", err);
             }
         }
+    }
+});
+
+d.addEventListener("keyup", (e) => {
+    if (
+        (e.target === $artistSearch || e.target === $categorySearch) &&
+        e.target.value
+    ) {
+        if (e.target === $artistSearch) {
+            $categorySearch.value = "";
+            d.querySelectorAll(".artist-name").forEach((artist) => {
+                if (
+                    artist.textContent
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase())
+                ) {
+                    artist.parentNode.parentNode.style.display = "grid";
+                } else {
+                    artist.parentNode.parentNode.style.display = "none";
+                }
+            });
+        }
+        if (e.target === $categorySearch) {
+            $artistSearch.value = "";
+            d.querySelectorAll(".artist-categories").forEach((categories) => {
+                if (
+                    Array.from(categories.children).some((category) =>
+                        category.textContent
+                            .toLowerCase()
+                            .includes(e.target.value.toLowerCase())
+                    )
+                ) {
+                    Array.from(categories.children).forEach((el) =>
+                        console.log(el.textContent.includes(e.target.value))
+                    );
+
+                    categories.parentNode.style.display = "grid";
+                } else {
+                    categories.parentNode.style.display = "none";
+                }
+            });
+        }
+    } else if (
+        (e.target === $artistSearch || e.target === $categorySearch) &&
+        !e.target.value
+    ) {
+        d.querySelectorAll(".artist").forEach((section) => {
+            section.style.display = "grid";
+        });
     }
 });

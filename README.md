@@ -5,3 +5,5 @@
 -   ## Hentai Opener:
     Allows you to open pages with customized urls from a list, and add templates
 -   ## Hentai Viewer:
+
+### The v0.1 and the v0.2 for some issues didn't pushed well and they are not working

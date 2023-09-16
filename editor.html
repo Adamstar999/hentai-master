@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hentai Picker</title>
+        <title>Hentai Editor</title>
 
         <!-- Page's Font: Alexandria -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,6 +28,7 @@
                     id="name"
                     type="text"
                     placeholder="Artist"
+                    required
                 />
                 <input
                     class="artist-input"
@@ -35,6 +36,7 @@
                     id="url"
                     type="text"
                     placeholder="Url"
+                    required
                 />
 
                 <input
@@ -43,6 +45,7 @@
                     id="categories"
                     type="text"
                     placeholder="Categories"
+                    required
                 />
                 <label for="categories"
                     >*Separate each category with a comma and a space: "images,
@@ -50,6 +53,33 @@
                 >
                 <input class="artist-submit" type="submit" value="Insertar" />
             </form>
+
+            <article class="search-container">
+                <form class="search-form">
+                    <div>
+                        <label class="search-label" for="artist-search"
+                            >Search by artist name:
+                        </label>
+                        <input
+                            class="search-input"
+                            id="artist-search"
+                            name="artist-search"
+                            type="text"
+                        />
+                    </div>
+                    <div>
+                        <label class="search-label" for="category-search"
+                            >Search by category name:
+                        </label>
+                        <input
+                            class="search-input"
+                            id="category-search"
+                            name="category-search"
+                            type="text"
+                        />
+                    </div>
+                </form>
+            </article>
 
             <article class="artists">
                 <template id="artist-template">

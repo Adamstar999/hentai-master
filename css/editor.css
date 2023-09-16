@@ -10,7 +10,7 @@
     width: 100%;
     font-size: 1.25rem;
     padding: 1rem;
-    margin-bottom: 2rem;
+    margin-block: 1rem;
     border: solid medium var(--fourth-color);
     border-radius: 0.5rem;
 }
@@ -21,7 +21,7 @@
     font-size: 1.25rem;
     padding: 0.5rem;
     margin-block: 1rem;
-    border: none;
+    border: solid medium var(--fourth-color);
     border-radius: 0.5rem;
 }
 
@@ -49,9 +49,11 @@
 .artist {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
     width: 100%;
-    padding-inline: 1rem;
+    padding-left: 1rem;
+    border: solid medium var(--third-color);
+    border-radius: 0.5rem;
+    margin: 1rem;
 }
 
 .artist-url {
@@ -70,14 +72,42 @@
     font-size: 1.5rem;
     padding: 0.5rem;
     border: none;
-    border-radius: 0.5rem;
     color: var(--text-dark-theme);
     background-color: var(--third-color);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.artist-submit:hover,
-.artist-btn:hover {
+.artist-submit:hover {
     transform: scale(1.05);
+}
+
+.artist-btn:hover {
+    background-color: var(--second-color);
+}
+
+.search-form {
+    display: flex;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.search-form div {
+    margin: 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.search-label {
+    font-size: 1.5rem;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-block: 1rem;
+    border: solid medium var(--fourth-color);
+    border-radius: 0.5rem;
 }

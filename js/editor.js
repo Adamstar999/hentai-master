@@ -101,6 +101,7 @@ d.addEventListener("click", async (e) => {
         $artistsForm.categories.value = e.target.dataset.categories;
         currentId = e.target.dataset.id;
 
+        d.querySelector(".artist-submit").value = "Editar";
         window.scrollTo(0, 0);
     }
 

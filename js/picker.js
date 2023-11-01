@@ -1,6 +1,6 @@
 // Inital Variables
 const d = document;
-let artistsUrl = "http://localhost:3000/artists";
+import { artistsURL } from "./index.js";
 
 // DOM Variables
 const $categoriesFragment = d.createDocumentFragment();
@@ -38,7 +38,7 @@ const randomArrIndex = (arr) => Math.floor(Math.random() * arr.length);
 
 const getArtistsData = async () => {
     try {
-        let res = await axios.get(artistsUrl),
+        let res = await axios.get(artistsURL),
             artistsDB = await res.data;
 
         // The processed variables

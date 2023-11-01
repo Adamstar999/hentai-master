@@ -1,5 +1,5 @@
 const d = document;
-let artistsUrl = "http://localhost:3000/artists";
+import { artistsURL } from "./index.js";
 let currentId;
 
 // DOM Variables
@@ -11,7 +11,7 @@ const $categorySearch = d.querySelector("#category-search");
 
 const getArtistsData = async () => {
     try {
-        let res = await axios.get(artistsUrl),
+        let res = await axios.get(artistsURL),
             artistsDB = await res.data;
 
         // Displaying the artists data using the template and inserting it to the fragment
@@ -73,7 +73,7 @@ d.addEventListener("submit", async (e) => {
                     categories: e.target.categories.value.split(", "),
                 };
 
-                await axios.post(artistsUrl, data);
+                await axios.post(artistsURL, data);
                 location.reload();
             } catch (err) {
                 console.log("The artists data couldn't be inserted. ", err);
@@ -87,7 +87,7 @@ d.addEventListener("submit", async (e) => {
                     categories: e.target.categories.value.split(", "),
                 };
 
-                await axios.put(`${artistsUrl}/${currentId}`, data);
+                await axios.put(`${artistsURL}/${currentId}`, data);
                 location.reload();
             } catch (err) {
                 console.log("The artists data couldn't be updated. ", err);
@@ -113,7 +113,7 @@ d.addEventListener("click", async (e) => {
         if (isDelete) {
             currentId = e.target.dataset.id;
             try {
-                await axios.delete(`${artistsUrl}/${currentId}`);
+                await axios.delete(`${artistsURL}/${currentId}`);
                 location.reload();
             } catch (err) {
                 console.log("The artist couldn't be deleted. ", err);

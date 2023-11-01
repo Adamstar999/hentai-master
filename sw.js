@@ -1,13 +1,6 @@
 const STATIC_CACHE = "static";
 
-const APP_SHELL = [
-    "/",
-    "editor.html",
-    "picker.html",
-    "css/styles.css",
-    "css/editor.css",
-    "css/picker.css",
-];
+const APP_SHELL = ["/", "css/styles.css", "css/editor.css", "css/picker.css"];
 
 // Guarda los archivos del arreglo proporcionado a la cache
 self.addEventListener("install", (e) => {

@@ -1,0 +1,40 @@
+{
+    "short_name": "Hentai Master",
+    "name": "Hentai Master",
+    "icons": [
+        {
+            "src": "assets/hm_logo_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/hm_logo_256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/hm_logo_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/hm_screenshot_mobile.png",
+            "type": "image/png",
+            "sizes": "456x685"
+        },
+        {
+            "src": "assets/hm_screenshot_desktop.png",
+            "type": "image/png",
+            "sizes": "1351x767",
+            "form_factor": "wide"
+        }
+    ],
+    "start_url": "index.html",
+    "background-color": "#ef204d",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#ef204d",
+    "description": "It is an application that enables the collection, organization, and interaction with data pertaining to the hentai genre."
+}

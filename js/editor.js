@@ -74,6 +74,7 @@ d.addEventListener("submit", async (e) => {
                 };
 
                 await axios.post(artistsUrl, data);
+                location.reload();
             } catch (err) {
                 console.log("The artists data couldn't be inserted. ", err);
             }
@@ -87,6 +88,7 @@ d.addEventListener("submit", async (e) => {
                 };
 
                 await axios.put(`${artistsUrl}/${currentId}`, data);
+                location.reload();
             } catch (err) {
                 console.log("The artists data couldn't be updated. ", err);
             }
@@ -101,6 +103,7 @@ d.addEventListener("click", async (e) => {
         $artistsForm.categories.value = e.target.dataset.categories;
         currentId = e.target.dataset.id;
 
+        d.querySelector(".artist-submit").value = "Editar";
         window.scrollTo(0, 0);
     }
 
@@ -111,6 +114,7 @@ d.addEventListener("click", async (e) => {
             currentId = e.target.dataset.id;
             try {
                 await axios.delete(`${artistsUrl}/${currentId}`);
+                location.reload();
             } catch (err) {
                 console.log("The artist couldn't be deleted. ", err);
             }

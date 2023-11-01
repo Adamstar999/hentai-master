@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hentai Master</title>
+        <title>Hentai Master v0.4</title>
 
         <!-- Page's Font: Alexandria -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +12,16 @@
             href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;400&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="shortcut icon"
+            href="assets/hm_logo_144x144.png"
+            type="image/x-icon"
+        />
+        <link rel="apple-touch-icon" href="assets/hm_logo_144x144.png" />
 
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="css/picker.css" />
+        <link rel="manifest" href="manifest.json" />
     </head>
     <body>
         <h1>Hentai Master</h1>
@@ -29,5 +36,12 @@
             src="https://us.rule34.xxx//samples/7504/sample_a2dbd3ed426d28c386564c8e2442b250.jpg?8561337"
             alt="image"
         /> -->
+        <script>
+            let swLocation = "sw.js";
+
+            if (navigator.serviceWorker) {
+                navigator.serviceWorker.register(swLocation);
+            }
+        </script>
     </body>
 </html>

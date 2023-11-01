@@ -1,5 +1,7 @@
 const d = document;
+// Detecting Changes
 import { artistsURL } from "./index.js";
+
 let currentId;
 
 // DOM Variables

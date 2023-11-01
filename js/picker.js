@@ -1,5 +1,6 @@
 // Inital Variables
 const d = document;
+// Detecting Changes
 import { artistsURL } from "./index.js";
 
 // DOM Variables

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hentai Master v0.4</title>
+        <title>Hentai Master</title>
 
         <!-- Page's Font: Alexandria -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +12,11 @@
             href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;400&display=swap"
             rel="stylesheet"
         />
+
+        <!-- Manifest for PWA -->
+        <link rel="manifest" href="manifest.json" />
+
+        <!-- Page Icion -->
         <link
             rel="shortcut icon"
             href="assets/hm_logo_144x144.png"
@@ -19,21 +24,26 @@
         />
         <link rel="apple-touch-icon" href="assets/hm_logo_144x144.png" />
 
+        <!-- Styles -->
         <link rel="stylesheet" href="css/styles.css" />
-        <link rel="stylesheet" href="css/picker.css" />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="css/index.css" />
     </head>
+
     <body>
-        <h1>Hentai Master</h1>
-        <a href="picker.html">Hentai Picker</a>
-        <!-- <img
-            src="https://us.rule34.xxx//samples/7504/sample_a2dbd3ed426d28c386564c8e2442b250.jpg?8561337"
-            alt="image"
-        /> -->
-        <!-- <img
-            src="https://us.rule34.xxx//samples/7504/sample_a2dbd3ed426d28c386564c8e2442b250.jpg?8561337"
-            alt="image"
-        /> -->
+        <!-- Header -->
+        <header>
+            <h1 class="main-title">Hentai Master</h1>
+        </header>
+
+        <!-- Main Menu -->
+        <main>
+            <nav class="menu">
+                <a class="menu-link" href="picker.html">Hentai Picker</a>
+                <a class="menu-link" href="#">Editor (In Progress)</a>
+                <a class="menu-link" href="#">Opener (In Progress)</a>
+                <a class="menu-link" href="#">Settings (In Progress)</a>
+            </nav>
+        </main>
         <script src="js/index.js" type="module"></script>
     </body>
 </html>

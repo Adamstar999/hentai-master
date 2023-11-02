@@ -1,7 +1,6 @@
 // Inital Variables
-const d = document;
-// Detecting Changes
 import { artistsURL } from "./index.js";
+const d = document;
 
 // DOM Variables
 const $categoriesFragment = d.createDocumentFragment();
@@ -100,11 +99,13 @@ d.addEventListener("DOMContentLoaded", async (e) => {
 });
 
 d.addEventListener("click", (e) => {
+    // Highlights the random artist
     if (e.target.matches(".category-random-btn")) {
         const $allCategoryArtists = d.querySelectorAll(
             `#${e.target.getAttribute("data-category")} .category-values li`
         );
 
+        // Change this for a better performance, saving to a variable
         $allCategoryArtists.forEach((artist) =>
             artist.classList.remove("category-random-selected")
         );
@@ -112,5 +113,9 @@ d.addEventListener("click", (e) => {
         $allCategoryArtists[randomArrIndex($allCategoryArtists)].classList.add(
             "category-random-selected"
         );
+        d.querySelector(".category-random-selected").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+        });
     }
 });

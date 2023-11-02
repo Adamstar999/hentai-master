@@ -8,6 +8,7 @@
 
 .category div {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -50,6 +51,16 @@
 
 .category-random-selected a:hover {
     opacity: 0.75;
+}
+
+@media screen and (max-width: 450px) {
+    .category div {
+        flex-direction: column;
+    }
+
+    .category-values {
+        padding: 1rem;
+    }
 }
 
 @keyframes fadeIn {

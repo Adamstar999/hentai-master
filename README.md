@@ -6,4 +6,9 @@
     Allows you to open pages with customized urls from a list, and add templates
 
 ### The v0.1 and the v0.2 for some issues didn't pushed well and they are not working
-In the 2.0 make a login for each user and he will have 
+
+### ToDo
+
+-   In the 2.0 make a login for each user and he will have all the data in that user, as the database and the settings
+
+-   Add a loader

@@ -25,8 +25,14 @@ body {
     color: var(--text-light-theme);
 }
 
+.main-title {
+    text-align: center;
+    font-size: 4rem;
+}
+
 .title {
     text-align: center;
+    font-size: 3rem;
 }
 
 .link {
@@ -38,4 +44,22 @@ body {
 
 .link:hover {
     color: var(--text-dark-theme);
+}
+
+.back-nav {
+    text-align: center;
+    margin: 2rem;
+}
+
+.back-link {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--third-dark-theme);
+    transition: all 0.2s ease-out;
+}
+
+.back-link:hover {
+    color: var(--first-color);
+    background-color: var(--fourth-color);
 }

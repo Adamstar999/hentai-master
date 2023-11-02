@@ -1,6 +1,6 @@
 const d = document;
 // Detecting Changes
-import { artistsURL } from "./index.js";
+// import { artistsURL } from "./index.js";
 
 let currentId;
 

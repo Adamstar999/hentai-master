@@ -5,6 +5,7 @@ const d = document;
 // DOM Variables
 const $categoriesFragment = d.createDocumentFragment();
 const $categoryFragment = d.createDocumentFragment();
+const $loader = d.querySelector(".loader");
 const $categoryTemplate = d.getElementById("category-template").content;
 
 // Extracts each object property data from an array of objects and deletes duplicates
@@ -38,6 +39,10 @@ const randomArrIndex = (arr) => Math.floor(Math.random() * arr.length);
 
 const getArtistsData = async () => {
     try {
+        // setTimeout(() => {
+        //     alert("Is taking more than expected, please wait");
+        // }, 5000);
+
         let res = await axios.get(artistsURL),
             artistsDB = await res.data;
 
@@ -87,6 +92,7 @@ const getArtistsData = async () => {
         });
 
         // Inserting the fragment to the DOM
+        d.querySelector(".categories").removeChild($loader);
         d.querySelector(".categories").appendChild($categoriesFragment);
     } catch (err) {
         console.log("The artists data couldn't load", err);

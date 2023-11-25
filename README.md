@@ -11,4 +11,3 @@
 
 -   In the 2.0 make a login for each user and he will have all the data in that user, as the database and the settings
 
--   Add a loader

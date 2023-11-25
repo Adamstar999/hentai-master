@@ -20,6 +20,10 @@ body {
     font-family: "Alexandria", sans-serif;
 }
 
+.none {
+    display: none;
+}
+
 .bg-dark-page {
     background-color: var(--first-color);
     color: var(--text-light-theme);
@@ -62,6 +66,11 @@ body {
 .back-link:hover {
     color: var(--first-color);
     background-color: var(--fourth-color);
+}
+
+.check-message {
+    text-align: center;
+    margin-inline: 1rem;
 }
 
 /* HTML: <div class="loader"></div> */

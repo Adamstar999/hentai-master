@@ -2,10 +2,16 @@
 import { artistsURL } from "./index.js";
 const d = document;
 
+// Response Messages
+const loading_message =
+    "We're currently processing the data, and it's taking a bit longer than expected. Thank you for your patience.";
+const error_message =
+    "An issue has occurred. Please try reloading the page, and if the problem persists, feel free to contact me via email at adamstargamer@gmail.com. Thank you for your understanding.";
+
 // DOM Variables
 const $categoriesFragment = d.createDocumentFragment();
-const $categoryFragment = d.createDocumentFragment();
 const $loader = d.querySelector(".loader");
+const $checkMessage = d.querySelector(".check-message");
 const $categoryTemplate = d.getElementById("category-template").content;
 
 // Extracts each object property data from an array of objects and deletes duplicates
@@ -39,12 +45,19 @@ const randomArrIndex = (arr) => Math.floor(Math.random() * arr.length);
 
 const getArtistsData = async () => {
     try {
-        // setTimeout(() => {
-        //     alert("Is taking more than expected, please wait");
-        // }, 5000);
+        // Pre-creating the data
+        let artistsDB = null;
 
-        let res = await axios.get(artistsURL),
-            artistsDB = await res.data;
+        // Checking if the data already has loaded, in negative case return a message to be patient
+        setTimeout(() => {
+            if (!artistsDB) {
+                $checkMessage.textContent = loading_message;
+                $checkMessage.classList.remove("none");
+            }
+        }, 4000);
+
+        let res = await axios.get(artistsURL);
+        artistsDB = await res.data;
 
         // The processed variables
         const allCategories = extractAllProperties(artistsDB, "categories");
@@ -91,11 +104,17 @@ const getArtistsData = async () => {
                 .forEach((li) => li.parentNode.removeChild(li));
         });
 
-        // Inserting the fragment to the DOM
+        // Removing the loading status
         d.querySelector(".categories").removeChild($loader);
+        $checkMessage.textContent = "";
+        $checkMessage.classList.add("none");
+
+        // Inserting the fragment to the DOM
         d.querySelector(".categories").appendChild($categoriesFragment);
     } catch (err) {
-        console.log("The artists data couldn't load", err);
+        // Returning a error message in case of an error
+        $checkMessage.textContent = error_message;
+        console.log(err);
     }
 };
 

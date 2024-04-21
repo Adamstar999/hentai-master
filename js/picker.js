@@ -68,6 +68,21 @@ const getArtistsData = async () => {
             allCategories
         );
 
+        // Sorting and making the last parse for the artists data
+        const parsedArtists = {};
+
+        for (const cat in artistsByCategory) {
+            parsedArtists[cat] = artistsByCategory[cat].sort((a, b) => {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+
         // Displaying the artists data using the template and inserting it to the categories fragment
         allCategories.forEach((cat) => {
             $categoryTemplate.querySelector(".category-name").textContent =
@@ -79,7 +94,7 @@ const getArtistsData = async () => {
                 .querySelector(".category-random-btn")
                 .setAttribute("data-category", cat);
 
-            artistsByCategory[cat].forEach((artist) => {
+            parsedArtists[cat].forEach((artist) => {
                 const $li = d.createElement("li");
                 const $a = d.createElement("a");
 

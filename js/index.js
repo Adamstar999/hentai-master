@@ -6,4 +6,4 @@ if (navigator.serviceWorker) {
 }
 
 // Hentai Artists Api
-export let artistsURL = "https://hentai-db.onrender.com/artists";
+export let artistsURL = "https://hentaimaster.adamaliweb.com/js/hentaiDB.json";

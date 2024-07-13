@@ -57,8 +57,9 @@ const getArtistsData = async () => {
         }, 4000);
 
         let res = await axios.get(artistsURL);
-        artistsDB = await res.data;
+        artistsDB = await res.data.artists;
 
+        console.log(artistsDB);
         // The processed variables
         const allCategories = extractAllProperties(artistsDB, "categories");
 
@@ -83,6 +84,10 @@ const getArtistsData = async () => {
             });
         }
 
+        if (!localStorage.getItem("enabled")) {
+            localStorage.setItem("enabled", ",");
+        }
+
         // Displaying the artists data using the template and inserting it to the categories fragment
         allCategories.forEach((cat) => {
             $categoryTemplate.querySelector(".category-name").textContent =
@@ -94,13 +99,14 @@ const getArtistsData = async () => {
                 .querySelector(".category-random-btn")
                 .setAttribute("data-category", cat);
 
-            parsedArtists[cat].forEach((artist) => {
+            parsedArtists[cat].forEach((artist, index) => {
                 const $li = d.createElement("li");
                 const $a = d.createElement("a");
 
                 $a.textContent = artist.name;
                 $a.classList.add("category-link");
                 $a.classList.add("link");
+                $a.setAttribute("data-key", artist.id);
                 $a.setAttribute("href", artist.url);
                 $a.setAttribute("target", "_blank");
 
